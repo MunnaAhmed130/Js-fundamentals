@@ -1,10 +1,11 @@
-let counter = 1;
+let counter = 0;
 
 // closure
 const myFunction = () => {
+    let counter = 1;
     console.log(counter);
     const childFunction = () => {
-        console.log(counter++);
+        console.log("nested function", counter++);
     };
     return childFunction;
 };
@@ -14,7 +15,21 @@ const result = myFunction();
 result();
 result();
 result();
-// console.log("g", counter);
+console.log("g", counter);
+
+const privateCounter = (() => {
+    let counter = 0;
+    console.log(`Initial value: ${counter}`);
+    return () => {
+        console.log("IIFE", ++counter);
+    };
+})();
+
+privateCounter();
+privateCounter();
+privateCounter();
+
+console.log("g", counter);
 
 // closure
 function applePrice() {
@@ -35,5 +50,5 @@ function applePrice() {
 }
 
 var price = applePrice();
-// price.setPrice(20);
-// console.log(price.getPrice());
+price.setPrice(20);
+console.log(price.getPrice());
