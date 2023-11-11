@@ -3,7 +3,6 @@ let counter = 1;
 // closure
 const myFunction = () => {
     console.log(counter);
-
     const childFunction = () => {
         console.log(counter++);
     };
@@ -15,7 +14,7 @@ const result = myFunction();
 result();
 result();
 result();
-console.log("g", counter);
+// console.log("g", counter);
 
 // closure
 function applePrice() {
@@ -38,9 +37,3 @@ function applePrice() {
 var price = applePrice();
 // price.setPrice(20);
 // console.log(price.getPrice());
-console.log(Object.getOwnPropertyDescriptor(price, `getPrice`));
-
-function greet(name) {
-    console.log(arguments[0]);
-}
-// greet("john"); // {}
