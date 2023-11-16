@@ -27,8 +27,6 @@ const person1 = {
     health: 50,
 };
 
-// console.log(Object.getOwnPropertyDescriptor(person, `firstName`));
-
 console.log("function prototype - call");
 
 // bind
