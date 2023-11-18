@@ -13,6 +13,7 @@ const person = {
 };
 
 console.log(Object.getOwnPropertyDescriptor(person, `firstName`));
+console.log(person);
 
 const object = Object.defineProperty({}, "property1", {
     value: 1,

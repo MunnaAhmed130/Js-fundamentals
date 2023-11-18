@@ -15,3 +15,6 @@ console.dir(strObj);
 
 // when you use object property or method on a
 console.log(str.length === new String(str).length);
+
+console.log((str.custom = 1)); // outputs 1 because str.custom is created
+console.log(str.custom); // undefined because it doesn't exist anymore
