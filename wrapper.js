@@ -7,9 +7,10 @@ console.log(strLength);
 // behind the scene
 // new String(), wrapper function, a constructor function, creates object
 let strObj = new String(str);
+console.dir(strObj);
 strLength = strObj.length;
-strObj = null;
 
+strObj = null;
 console.dir(strObj);
 
 // when you use object property or method on a
