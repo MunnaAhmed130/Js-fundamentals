@@ -17,6 +17,7 @@ function Person(name, age, job) {
     this.name = name;
     this.age = age;
     this.job = job;
+    // this method is copied for every object created
     this.ageString = function () {
         console.log(this.name, "is", this.age, "years old");
     };
@@ -25,3 +26,7 @@ function Person(name, age, job) {
 const samir = new Person("Samir Hossain", 22, "Student");
 const kinan = new Person("Kinan Hossain", 29, "Businessman");
 console.log(samir, kinan);
+
+// both give the same output
+console.dir(samir.__proto__);
+console.dir(Object.getPrototypeOf(samir));

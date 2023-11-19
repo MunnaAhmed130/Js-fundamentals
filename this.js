@@ -3,21 +3,21 @@
 
 // const value = 10;
 
-this.value = 10; // global variable with this
+// this.value = 10; // global variable with this
 console.log("global", this); // window object
 // console.log(value);
 
 // in strict mode this in a function definition is undefined
 function context() {
     // "use strict";
-    console.log(this);
+    console.log(this); // undefined
 }
 
 context();
 
 // arrow function will always refer to global object
 const func = () => {
-    console.log(this);
+    console.log(this); // window object
 };
 
 func();
