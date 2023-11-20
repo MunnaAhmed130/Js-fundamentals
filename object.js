@@ -1,3 +1,7 @@
+// var getFullName = function () {
+//     return this.firstName + " " + this.lastName;
+// };
+
 const person = {
     firstName: "John",
     lastName: "doe",
@@ -13,10 +17,10 @@ const person = {
 };
 
 // get object's property descriptor
-console.log(Object.getOwnPropertyDescriptor(person, `firstName`));
+// console.log(Object.getOwnPropertyDescriptor(person, `firstName`));
 
 // check if object has this property
-console.log(person.hasOwnProperty("heal"));
+// console.log(person.hasOwnProperty("heal"));
 
 console.log(person);
 
