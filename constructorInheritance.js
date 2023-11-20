@@ -1,29 +1,33 @@
-/* this constructor copies methods for every object created
-function Person(name, age, job) {
-    this.name = name;
-    this.age = age;
-    this.job = job;
-    this.ageString = function () {
-        console.log(this.name, "is", this.age, "years old");
-    };
-}
-*/
-
-// prototype based inheritence
 function Person(name, age, job) {
     this.name = name;
     this.age = age;
     this.job = job;
 }
 
+// Person instances will inherite this prototype - prototypal inheritance
 Person.prototype.ageString = function () {
     console.log(this.name, "is", this.age, "years old");
 };
 
-/*
-    Any object instances created by a constructor function 
-    will inherit the properties of the object at ConstructorFunctionName.prototype.
+/*  Teacher has the same properties as person plus more
+
+function Teacher(name, age, job, subject){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.subject = subject;
+}
+
 */
+
+function Teacher(name, age, job, subject) {
+    Person.call(this, name, age, job); // constructor inheritance
+    this.subject = subject;
+}
+
 const samir = new Person("Samir Hossain", 22, "Student");
 const kinan = new Person("Kinan Hossain", 29, "Businessman");
-console.log(samir, kinan);
+
+const dave = new Teacher("Dave Gray", 34, "Teacher", "English");
+
+console.log(samir, kinan, dave);

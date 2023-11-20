@@ -1,3 +1,4 @@
+// "use strict";
 // var getFullName = function () {
 //     return this.firstName + " " + this.lastName;
 // };
@@ -16,6 +17,8 @@ const person = {
     },
 };
 
+Object.preventExtensions(person);
+person.job = "archer";
 // get object's property descriptor
 // console.log(Object.getOwnPropertyDescriptor(person, `firstName`));
 
