@@ -36,13 +36,25 @@ function createPersonWithPrototype(first, last) {
     person.lastName = last;
     return person;
 }
+// function createPersonWithPrototype2(first, last) {
+//     return {
+//         firstName: first,
+//         lastName: last,
+//     };
+// }
 
 let person = createPersonWithMethod("John", "Doe");
 let person1 = createPersonWithPrototype("Jane", "Doe");
+// let person2 = createPersonWithPrototype2("Jane", "Doe");
+
+// createPersonWithPrototype2.prototype.getFullName = function () {
+//     return this.firstName + " " + this.lastName;
+// };
 
 let objWithPrototype = Object.create(personActions);
 
 console.log(person === person1);
 console.log(person);
 console.log(person1);
+// console.log(person2);
 console.log(objWithPrototype);

@@ -26,6 +26,7 @@ console.log(person);
 
 const object = Object.defineProperty({}, "property1", {
     value: 1,
+    // meta data
     writable: true, // values can be changed
     enumerable: false, // can be enumerated
     configurable: true, // can be deleted

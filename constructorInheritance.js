@@ -27,6 +27,3 @@ Person.prototype.ageString = function () {
 const samir = new Person("Samir Hossain", 22, "Student");
 const kinan = new Person("Kinan Hossain", 29, "Businessman");
 console.log(samir, kinan);
-
-// Person.prototype object reference is a descendent of Object.prototype
-console.log(Person.prototype);
