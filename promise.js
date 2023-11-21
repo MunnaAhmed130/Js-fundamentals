@@ -1,6 +1,5 @@
-// javascript promise
-
 const myPromise = (getGarlic) => {
+    // promise constructor
     return new Promise((resolve, reject) => {
         if (getGarlic == true) {
             resolve("There is Garlic Powder");
@@ -20,22 +19,32 @@ const myPromise = (getGarlic) => {
 //     }
 // });
 
+// callbacks
 const onFulfilled = (message) => {
     console.log("Make noodles because", message);
-    return myPromise(true);
+    // return myPromise(true);
 };
 
 const onFailure = (message) => {
     console.log("Make toast because", message);
 };
 
-myPromise(true)
-    .then(onFulfilled)
-    .then(onFulfilled)
-    .then(onFulfilled)
-    .then(onFulfilled)
-    .then((message) => {
-        console.log("Make noodles because", message);
-        return myPromise(false);
-    })
-    .catch(onFailure);
+// not encouraged
+// myPromise(true).then(onFulfilled, onFailure);
+
+// Encouraged
+// catch will also catch error from then method
+// both then and catch methods return promises
+myPromise(true).then(onFulfilled).catch(onFailure);
+
+// chaining promise
+// myPromise(true)
+//     .then(onFulfilled)
+//     .then(onFulfilled)
+//     .then(onFulfilled)
+//     .then(onFulfilled)
+//     .then((message) => {
+//         console.log("Make noodles because", message);
+//         return myPromise(false);
+//     })
+//     .catch(onFailure);
