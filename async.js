@@ -2,7 +2,7 @@
 async function myFunction() {
     // return "Hello";
     let myPromise = new Promise(function (resolve) {
-        setTimeout(() => resolve("I love You !!"), 2000);
+        setTimeout(() => resolve("How are you!!"), 2000);
     });
 
     console.log("Hey");

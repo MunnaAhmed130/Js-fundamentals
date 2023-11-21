@@ -27,4 +27,5 @@ function higherOrderFunction(callback) {
     callback(name);
 }
 
+// higher order functions take callbacks as arguments
 higherOrderFunction(greet);
