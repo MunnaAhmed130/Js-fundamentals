@@ -1,16 +1,16 @@
-const add = (num) => {
-    let count = 0;
+const add = (num = 0) => {
+    let count = num;
     return {
-        get number() {
+        get addNumber() {
             return count;
         },
-        set number(num) {
+        set addNumber(num) {
             count += num;
         },
     };
 };
 
-const result = add();
-result.number = 10;
-result.number = 20;
-console.log(result.number);
+const result = add(10);
+result.addNumber = 10;
+result.addNumber = 20;
+console.log(result.addNumber);
