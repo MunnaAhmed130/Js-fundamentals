@@ -95,6 +95,7 @@ class Vehicle {
         this.wheels = 4;
         this.motorized = true;
     }
+    // prototype method
     ready() {
         return "Ready to go!";
     }

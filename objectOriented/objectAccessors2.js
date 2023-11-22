@@ -1,3 +1,4 @@
+// getter setter
 const add = (num = 0) => {
     let count = num;
     return {
