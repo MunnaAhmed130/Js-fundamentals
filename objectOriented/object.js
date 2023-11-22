@@ -20,13 +20,17 @@ const person = {
     },
     // ES6
     login() {
-        console.log(this.email);
+        // console.log(this.email);
+        return this.email;
     },
 };
 
 // prevent adding properties to object
-Object.preventExtensions(person);
+// Object.preventExtensions(person);
+
+// dot/bracket notation to add property
 person.job = "archer";
+person["job"] = "medic";
 
 // get object's property descriptor
 // console.log(Object.getOwnPropertyDescriptor(person, `firstName`));
@@ -35,3 +39,12 @@ person.job = "archer";
 // console.log(person.hasOwnProperty("heal"));
 
 console.log(person);
+
+// dot/bracket notation to access property
+console.log(person["email"], person.health);
+
+// why use bracket notation
+// for dynamic access / passing a variable
+for (let key in person) {
+    console.log(person[key]);
+}
