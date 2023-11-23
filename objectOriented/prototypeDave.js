@@ -89,7 +89,6 @@ console.log(Bear.__proto__ === Object.getPrototypeOf(Bear));
 console.log(Bear.__proto__ === Animal.prototype);
 
 // Now an ES6 Classes example of inheritance
-
 class Vehicle {
     constructor() {
         this.wheels = 4;

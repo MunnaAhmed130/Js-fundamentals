@@ -21,6 +21,10 @@ class User {
 }
 
 class Admin extends User {
+    constructor(email, name) {
+        super(email, name);
+        this.role = "admin";
+    }
     // if Admin has no constructor it will use User class constructor
     deleteUser(user) {
         users = users.filter((u) => u.email !== user.email);
