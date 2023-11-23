@@ -6,6 +6,7 @@ const employees = {
     accountant: "Oscar",
 };
 
+// creates a new object and link it to the prototype of barista
 const barista = Object.create(employees);
 barista.position = "barista";
 console.log(barista);
