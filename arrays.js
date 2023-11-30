@@ -7,4 +7,10 @@ val = [...Array(10).keys()].map((x) => x + 1);
 val = Array(10)
     .fill()
     .map((_, x) => x + 1);
-console.log(val);
+console.log(val, val[10]);
+
+let arr = [1, 2];
+let i = 0;
+// swap values
+[arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+console.log(arr);
