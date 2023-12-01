@@ -17,6 +17,10 @@ function badKey() {
 }
 
 // dispatch table
+// "calling a method on an object" was known as
+// "sending a message to an object"
+// dispatch and send are synonyms
+// in js method calls are always dynamic
 let dispatch = {
     // up: goUp,
     // down: goDown,

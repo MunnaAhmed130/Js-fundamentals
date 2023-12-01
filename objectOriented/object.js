@@ -45,6 +45,7 @@ console.log(person["email"], person.health);
 
 // why use bracket notation
 // for dynamic access / passing a variable
+// dynamic access / dynamic dispatch
 for (let key in person) {
     console.log(person[key]);
 }

@@ -25,6 +25,8 @@ function Teacher(name, age, job, subject) {
     this.subject = subject;
 }
 
+Teacher.prototype = Object.create(Person.prototype);
+
 const samir = new Person("Samir Hossain", 22, "Student");
 const kinan = new Person("Kinan Hossain", 29, "Businessman");
 
