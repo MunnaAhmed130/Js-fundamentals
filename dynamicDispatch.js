@@ -1,27 +1,32 @@
 let key = "u";
 
-function goUp() {
-    console.log("up");
-}
-function goDown() {
-    console.log("down");
-}
-function goLeft() {
-    console.log("left");
-}
-function goRight() {
-    console.log("right");
-}
+// function goUp() {
+//     console.log("up");
+// }
+// function goDown() {
+//     console.log("down");
+// }
+// function goLeft() {
+//     console.log("left");
+// }
+// function goRight() {
+//     console.log("right");
+// }
 function badKey() {
     console.log("BadKey");
 }
 
 // dispatch table
 let dispatch = {
-    up: goUp,
-    down: goDown,
-    left: goLeft,
-    right: goRight,
+    // up: goUp,
+    // down: goDown,
+    // left: goLeft,
+    // right: goRight,
+    // or
+    up: () => console.log("up"),
+    down: () => console.log("down"),
+    left: () => console.log("left"),
+    right: () => console.log("right"),
 };
 
 if (key in dispatch) {
