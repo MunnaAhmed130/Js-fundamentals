@@ -11,7 +11,7 @@ const musician = {
     plays: true,
 };
 
-// both are the same
+// both are the same  // prototypal inheritance
 // musician.__proto__ = person; // old way
 Object.setPrototypeOf(musician, person);
 
@@ -25,6 +25,7 @@ console.log(musician.plays, musician.alive);
 // Extending the prototype chain
 const guitarist = {
     strings: 6,
+    // prototypal inheritance
     __proto__: musician,
 };
 
@@ -75,6 +76,8 @@ function Animal(species) {
     this.eats = true;
 }
 
+// pseudoclassical inheritance
+// emulates classical inheritance using prototypal inheritance
 Animal.prototype.walks = function () {
     return `A ${this.species} is walking.`;
 };

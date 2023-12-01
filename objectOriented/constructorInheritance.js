@@ -1,10 +1,12 @@
+// Person instances will inherite this prototype - prototypal inheritance
 function Person(name, age, job) {
     this.name = name;
     this.age = age;
     this.job = job;
 }
 
-// Person instances will inherite this prototype - prototypal inheritance
+// pseudoclassical inheritance
+// emulates classical inheritance using prototypal inheritance
 Person.prototype.ageString = function () {
     console.log(this.name, "is", this.age, "years old");
 };
@@ -25,7 +27,10 @@ function Teacher(name, age, job, subject) {
     this.subject = subject;
 }
 
+// Teacher gets all the prototypes of Person function
 Teacher.prototype = Object.create(Person.prototype);
+// Teacher.prototype = 1;
+// delete Teacher.prototype;
 
 const samir = new Person("Samir Hossain", 22, "Student");
 const kinan = new Person("Kinan Hossain", 29, "Businessman");

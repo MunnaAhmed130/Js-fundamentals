@@ -23,9 +23,14 @@ function Person(name, age, job) {
     // };
 }
 
+// Person has a prototype property
+console.log(Person.hasOwnProperty("prototype"));
+
 Person.prototype.ageString = function () {
     console.log(this.name, "is", this.age, "years old");
 };
+
+Object.setPrototypeOf(Person, null);
 
 /*
     Any object instances created by a constructor function 
