@@ -6,6 +6,7 @@ let age = 20;
 
 const game = new String("Football");
 
+// console.log(game);
 console.log(game[0], game.charAt(0));
 console.log(game.indexOf("t"));
 
@@ -15,12 +16,14 @@ console.log(newString);
 const anotherString = game.slice(-8, 4);
 console.log(anotherString);
 
+// trim()
 const newStringOne = "   David    ";
 console.log(newStringOne);
 console.log(newStringOne.trim());
 
 const url = "https://media.com/author%20is%20alive";
 
+// replace
 console.log(url.replace("%20", "-"));
 console.log(url.replaceAll("%20", "-"));
 
