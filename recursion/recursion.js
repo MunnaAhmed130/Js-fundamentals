@@ -119,7 +119,7 @@ const artistsByGenre = {
     },
 };
 
-const w = (obj, arr = []) => {
+const getArtistNames = (obj, arr = []) => {
     Object.keys(obj).forEach((genre) => {
         if (Array.isArray(obj[genre])) {
             return obj[genre].forEach((artistName) => arr.push(artistName));

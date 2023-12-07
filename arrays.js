@@ -17,7 +17,10 @@ let i = 0;
 // console.log(arr);
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// let fruit = fruits.splice(2, 0, "Lemon", "Kiwi"); // add
+// let fruit = fruits.splice(2, 1); // delete
 // let fruit = fruits.splice(2, 1, "Lemon", "Kiwi"); // add & delete
 
-let removedFruits = fruits.slice(-2);
+let removedFruits = fruits.slice(-2); //  a copy
 console.log(fruits, removedFruits);
+console.log(fruit);
