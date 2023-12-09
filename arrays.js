@@ -1,3 +1,4 @@
+// creating arrays
 // Array.from()
 let val = Array.from(Array(10).keys()).map((x) => x + 1);
 val = Array.from(Array(10), (_, x) => x + 1);
@@ -17,10 +18,11 @@ let i = 0;
 // console.log(arr);
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
-// let fruit = fruits.splice(2, 0, "Lemon", "Kiwi"); // add
-// let fruit = fruits.splice(2, 1); // delete
-// let fruit = fruits.splice(2, 1, "Lemon", "Kiwi"); // add & delete
 
 let removedFruits = fruits.slice(-2); //  a copy
 console.log(fruits, removedFruits);
-console.log(fruit);
+
+// let fruit = fruits.splice(2, 0, "Lemon", "Kiwi"); // add
+// let fruit = fruits.splice(2, 1); // delete
+// let fruit = fruits.splice(2, 1, "Lemon", "Kiwi"); // add & delete
+// console.log(fruit);

@@ -176,7 +176,7 @@ const incrementHomeC = (obj, cloneFn) => {
 
 const homeScoreC = pipe(
     (x) => incrementHomeC(x, shallowClone)
-    //another function
+    // another function
     // and another function etc.
 );
 
