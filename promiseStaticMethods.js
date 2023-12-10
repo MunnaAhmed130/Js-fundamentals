@@ -12,7 +12,7 @@ const promise2 = new Promise((resolve, reject) => {
     // setTimeout(reject, 1000, "Err");
 });
 
-// returns catch for any error
+// returns catch for any error means if 1 promise fails all fail
 // Promise.all([promise1, , promise2])
 //     .then((value) => console.log(value))
 //     .catch((err) => console.log(err));
