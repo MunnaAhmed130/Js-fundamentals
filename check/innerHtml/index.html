@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <!-- <script src="index.js" defer></script> -->
+        <script src="xss.js" defer></script>
+    </head>
+    <body>
+        <main>
+            <form>
+                <input type="text" /> <br />
+                <button type="submit">Submit</button>
+            </form>
+            <h1>Random Text</h1>
+            <section>
+                <button id="1">innerHTML</button>
+                <button id="2">Fragment</button>
+            </section>
+        </main>
+        <!-- <img src="x" onerror="alert('XSS Attack!')" /> -->
+    </body>
+</html>
