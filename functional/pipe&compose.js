@@ -31,8 +31,8 @@ const result = multiplyBy5(subtract1(add2(4)));
 */
 
 // understanding reduce and reduceright
-// const reduce = ["adam", "eve"].reduce((prev, fn) => prev + fn);
-// console.log(reduce);
+// const reduce = ["adam", "eve"].reduce((prevStr, str) => prevStr + str);
+// console.log("reduce", reduce);
 
 /*
     To get the compose order from right to left as we see with nested function calls in our example above, we need reduceRight
@@ -43,7 +43,7 @@ const compose =
     (val) =>
         fns.reduceRight((prev, fn) => fn(prev), val);
 
-// console.log(compose(multiplyBy5, subtract1, add2)(4));
+console.log("COMPOSE", compose(multiplyBy5, subtract1, add2)(4));
 
 /*
     To do the same, but read from left to right... we use "pipe".
@@ -55,7 +55,7 @@ const pipe =
     (val) =>
         fns.reduce((prev, fn) => fn(prev), val);
 
-// console.log(pipe(add2, subtract1, multiplyBy5)(4));
+console.log("Pipe", pipe(add2, subtract1, multiplyBy5)(4));
 
 /*
     This is a "pointer free" style where you do not see the unary parameter passed between each function    

@@ -33,7 +33,7 @@ const updateElemText = (id) => (content) => {
     document.querySelector(`#${id}`).textContent = content;
 };
 
-const updateHeaderText = updateElemText("header");
+// const updateHeaderText = updateElemText("header");
 // updateHeaderText("Hello World");
 
 // Another common use of currying is function composition
@@ -59,11 +59,9 @@ let completeOrder = (...args) => {
 
 // calling processOrder with completeOrder as argument
 completeOrder = processOrder(completeOrder);
-console.log(completeOrder);
 completeOrder = addCustomer(completeOrder);
-// addCustomer(processOrder(completeOrder))
-console.log(completeOrder);
 completeOrder("1000");
+// const value = addCustomer(processOrder(completeOrder))("1000");
 
 // above code is the same as
 // function addCustomer(...args) {

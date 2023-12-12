@@ -97,6 +97,7 @@ const butter = () => {
     };
 };
 
+// console.log({ ...butter() });
 const createPizza = (size, crust, sauce) => {
     const pizza = {
         size,
