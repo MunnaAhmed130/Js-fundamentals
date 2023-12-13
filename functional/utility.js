@@ -33,7 +33,7 @@ const log = (content) => {
     console.log(content);
 };
 
-log(properCase("muNna"));
+// log(properCase("muNna"));
 
 // #3  query selector with optional scope
 const select = (selector, scope) => {
@@ -41,7 +41,7 @@ const select = (selector, scope) => {
 };
 
 // log(select("#header"));
-let body = select("body");
+// let body = select("body");
 // log(body);
 
 // #4  addEventListener wrapper
@@ -51,7 +51,7 @@ const listen = (target, event, callback, capture = false) => {
 
 const eventLog = (e) => console.log(e.target);
 
-listen(body, "click", eventLog);
+// listen(body, "click", eventLog);
 
 // #5 sanitize input - use RegEx or try this
 const sanitizeInput = (inputValue) => {
@@ -90,7 +90,7 @@ const addClass = (selector, className, scope) => {
     (scope || document).querySelector(selector).classList.add(className);
 };
 
-addClass("body", "purple");
+// addClass("body", "purple");
 
 // #9 check for ios
 const isIOS = () => {
@@ -101,4 +101,20 @@ const isIOS = () => {
     ); // MSStream is to avoid IE11
 };
 
-log(isIOS());
+// log(isIOS());
+
+// #10 get parameters by name from url
+const getParameterValue = (paramName, url) => {
+    if (!url) url = window.location.href;
+    const regex = new RegExp(`[?&]${paramName}(=([^&#]*))`);
+    const results = regex.exec(url);
+    console.log(results);
+    if (!results) return null;
+    if (!results[2]) return "";
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+};
+
+const PARAM = "paramTwo";
+const URL = "https://www.testURL.com/?paramOne=one&paramTwo=Hello+World!";
+
+log(getParameterValue(PARAM, URL));

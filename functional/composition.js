@@ -132,6 +132,7 @@ const createStuffedButteredCrustPizza = (pizza) => {
     };
 };
 
+// create a pizza
 const anotherPizza = createPizza("medium", "thin", "original");
 const somebodysPizza = createStuffedButteredCrustPizza(anotherPizza);
 const davesPizza = createStuffedButteredCrustPizza(
@@ -146,20 +147,21 @@ const addTopping = (pizza, topping) => {
     return pizza;
 };
 
-// const jimsPizza = createPizza("medium", "thin", "original");
+const jimsPizza = createPizza("medium", "thin", "original");
 // console.log(jimsPizza);
-// console.log(addTopping(jimsPizza, "perpperoni"));
+console.log(addTopping(jimsPizza, "perpperoni"));
 // console.log(jimsPizza);
 
 // we need to clone the pizza object to avoid mutation
 // function composition
 // decorator function
-// const shallowPizzaClone = (fn) => {
-//     return (obj, array) => {
-//         const newObj = { ...obj };
-//         return fn(newObj, array);
-//     };
-// };
+const shallowPizzaCloneF = (fn) => {
+    return (obj, array) => {
+        const newObj = { ...obj };
+        return fn(newObj, array);
+    };
+};
+
 // short arrow function
 const shallowPizzaClone = (fn) => (obj, array) => fn({ ...obj }, array);
 
