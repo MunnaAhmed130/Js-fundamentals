@@ -29,10 +29,11 @@ const properCase = (string) => {
 };
 
 // #2  console.log
-const log = (content) => {
+export const log = (content) => {
     console.log(content);
 };
 
+// module.exports = { log };
 // log(properCase("muNna"));
 
 // #3  query selector with optional scope
@@ -117,4 +118,4 @@ const getParameterValue = (paramName, url) => {
 const PARAM = "paramTwo";
 const URL = "https://www.testURL.com/?paramOne=one&paramTwo=Hello+World!";
 
-log(getParameterValue(PARAM, URL));
+// log(getParameterValue(PARAM, URL));
