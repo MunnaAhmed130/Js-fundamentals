@@ -1,6 +1,8 @@
 // synchronous callback & higerOrderFunction
 const myNumbers = [4, 1, -20, -7, 5, 9, -6];
 
+// A callback is a function passed as an argument to another function
+
 // Keep numbers based on callback function
 function keepNum(numbers, callback) {
     const myArray = [];

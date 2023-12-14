@@ -1,9 +1,19 @@
+// Array
+
+const myArr = new Array(1, 2, 3, 4);
+
+// --------------------
+
 let arr = [1, 2];
 let i = 0;
 // swap values with array
 [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
 // console.log(arr);
 
+//----------------------------------
+// () parentheses
+// [] bracket
+// {} braces / curly braces
 // ----------------------------------
 
 // Checking for empty arrays

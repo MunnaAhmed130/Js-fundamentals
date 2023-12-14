@@ -1,3 +1,15 @@
+// basic
+const arr = [1, 2, 3];
+arr.push(4);
+console.log(arr);
+arr.pop();
+console.log(arr);
+arr.shift();
+console.log(arr);
+arr.unshift(1);
+console.log(arr);
+console.log(arr.includes(1), arr.indexOf(1), arr[0]);
+
 // ------------- creating arrays -------------
 // Array.from()
 let vals = Array.from(Array(10).keys()).map((x) => x + 1);
@@ -14,15 +26,18 @@ vals = Array(10)
 // ---------------- slice / splice -------------
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 
+// slice doesn't mutates the array
 let removedFruits = fruits.slice(-2); //  a copy
 // console.log(fruits, removedFruits);
 
+// splice mutates the array
 // let fruit = fruits.splice(2, 0, "Lemon", "Kiwi"); // add
 // let fruit = fruits.splice(2, 1); // delete
 // let fruit = fruits.splice(2, 1, "Lemon", "Kiwi"); // add & delete
 // console.log(fruit);
 
 // --------------------- for each -----------------
+// why you should not use foreach
 
 // console.log(vals);
 
