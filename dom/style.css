@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    /* margin: 0; */
+}
+h1 {
+    font-size: 3rem;
+}
+
+ul {
+    padding-left: 2rem;
+}
+li {
+    font-size: 1.25rem;
+    padding: 0.1rem;
+}
