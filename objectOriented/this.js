@@ -36,6 +36,10 @@ var obj = {
                 this.designation,
                 "with a salary of " + this.salary
             );
+            return () => {
+                // this arrow func gets lexical this from it's parent scope
+                console.log("arrow", this);
+            };
         },
         // arrow function will always refer to global object
         more: () => {
@@ -51,7 +55,7 @@ var obj = {
     },
 };
 
-obj.log();
-obj.arrow();
-obj.job.about();
+// obj.log();
+// obj.arrow();
+obj.job.about()();
 obj.job.more();

@@ -1,4 +1,4 @@
-// basic
+// -----------  basic  ----------------
 const arr = [1, 2, 3];
 arr.push(4);
 console.log(arr);
@@ -10,6 +10,23 @@ arr.unshift(1);
 console.log(arr);
 console.log(arr.includes(1), arr.indexOf(1), arr[0]);
 
+// ---------------------shallow copies ------------
+const arr2 = [4, 5, 6];
+
+let newArr = arr.concat(arr2);
+console.log(newArr);
+
+newArr = [...arr, ...arr2];
+console.log(newArr);
+
+// ----------------------- flat --------------------
+
+const array = [1, 2, 3, [4], [5, [6, 7]], 8, 9];
+console.log(array.flat(Infinity));
+
+// -----------------------
+console.log(Array.of("Hello"));
+console.log(Array.from(Object.keys({ name: "adam" })));
 // ------------- creating arrays -------------
 // Array.from()
 let vals = Array.from(Array(10).keys()).map((x) => x + 1);
@@ -48,7 +65,7 @@ const initApp = async () => {
     getPostSerializedWithReduce(vals);
 };
 
-document.addEventListener("DOMContentLoaded", initApp);
+// document.addEventListener("DOMContentLoaded", initApp);
 
 const getPost = async (id) => {
     // const data = await fetch("https://jsonplaceholder.typicode.com/posts");
