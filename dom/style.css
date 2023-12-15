@@ -2,6 +2,7 @@
     padding: 0;
     /* margin: 0; */
 }
+
 h1 {
     font-size: 3rem;
 }
@@ -9,7 +10,34 @@ h1 {
 ul {
     padding-left: 2rem;
 }
+
 li {
     font-size: 1.25rem;
     padding: 0.1rem;
+}
+
+table {
+    width: 75%;
+    margin: auto;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+}
+
+tr {
+    border: 2px solid #26736be9;
+    border-radius: 5px;
+    background-color: #79c1b88e;
+}
+
+tr:nth-child(even) {
+    background-color: #6aaca3c8;
+}
+
+td {
+    padding: 0.25rem;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    border: 2px solid #26736be9;
+    text-align: center;
 }
