@@ -9,8 +9,8 @@ body {
     color: rgb(132, 141, 151);
 }
 
-h1 {
-    font-size: 3rem;
+.heading1 {
+    font-size: 4rem;
     text-align: center;
 }
 
