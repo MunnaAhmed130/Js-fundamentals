@@ -22,6 +22,15 @@ const p = document.querySelector("p");
 // p.innerText = '<script> console.log("Hello") </script>';
 // p.textContent = '<script> console.log("Hello") </script>';
 
+/*
+const first = document.querySelector(".first");
+const second = document.querySelector(".second");
+const third = document.querySelector(".third");
+console.log(first.innerText);
+console.log(second.textContent);
+console.log(third.innerHTML);
+*/
+
 // console.log(p);
 const n = 100;
 

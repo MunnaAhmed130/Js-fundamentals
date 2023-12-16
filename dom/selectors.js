@@ -5,7 +5,7 @@ document.getElementById("h1").innerHTML = "Hey World!";
 // getElementById is method, demo is element, innerHTML is property
 const p = document.getElementsByTagName("p"); // finds all elements with tag name
 // console.log(p);
-document.getElementsByClassName("intro"); // finds all elements with class name
+document.getElementsByClassName(""); // finds all elements with class name
 // document.querySelector(); // returns the first element
 // find all that matches a specific css selector
 // document.querySelectorAll("p.intro");
