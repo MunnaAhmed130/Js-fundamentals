@@ -8,6 +8,9 @@ body {
     background-color: rgb(38, 39, 35);
     color: rgb(132, 141, 151);
 }
+a {
+    color: rgb(131, 171, 216);
+}
 
 .heading1 {
     font-size: 4rem;
