@@ -1,11 +1,16 @@
 // attributes - href, value, type
 // getAttribute(attr), setAttribute(attr, value)
 
-const a = document.querySelector("a");
-// console.log(a.innerText, (a.href = "hey"));
-// console.log(a.getAttribute("href"));
-// a.setAttribute("href", "http://127.0.0.1:5500/dom/index.html");
-// console.log(a.getAttribute("href"));
+let a = document.querySelector("a");
+
+// dot notation
+a.href = "http://www.youtube.com";
+console.log(a.innerText, a.href);
+
+// get set attribute
+console.log(a.getAttribute("href"));
+a.setAttribute("href", "http://127.0.0.1:5500/");
+console.log(a.getAttribute("href"));
 
 // get custom data attributes
 // doesn't work
@@ -25,9 +30,8 @@ console.log(input, input.type, input.name, input.id, input.value);
 // bracket notation
 console.log("bracket Notation =>", input["name"]);
 
-// set value to attr using dot notation
+// set value to attr using dot/bracket notation
 input.value = "Enter valu";
-// set value to attr using dot notation
 input["value"] = "Enter value";
 
 // set attribute is better for dynamic attr handling
@@ -38,7 +42,7 @@ input.setAttribute(attr, "Hello");
 const attribute = input.getAttribute("types"); // null
 console.log(input.type); // undefined
 
-input.addEventListener("change", (e) => {
-    console.log(e.target.value);
-    a.href = e.target.value;
-});
+// input.addEventListener("change", (e) => {
+//     console.log(e.target.value);
+//     a.href = e.target.value;
+// });
