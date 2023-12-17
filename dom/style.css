@@ -8,8 +8,15 @@ body {
     background-color: rgb(38, 39, 35);
     color: rgb(132, 141, 151);
 }
+
 a {
     color: rgb(131, 171, 216);
+}
+
+button {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 1rem;
 }
 
 .heading1 {
