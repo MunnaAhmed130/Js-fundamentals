@@ -13,6 +13,12 @@ a {
     color: rgb(131, 171, 216);
 }
 
+input {
+    font-size: 1.25rem;
+    margin: 2rem;
+    width: 10rem;
+}
+
 button {
     padding: 1rem;
     margin: 1rem;
@@ -34,6 +40,10 @@ p {
     font-size: 1.5rem;
     padding: 1rem;
     margin: 1rem;
+}
+
+.para {
+    color: rgb(89, 191, 120);
 }
 
 ul {
