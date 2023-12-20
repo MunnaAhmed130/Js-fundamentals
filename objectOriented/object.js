@@ -47,5 +47,12 @@ console.log(person["email"], person.health);
 // for dynamic access / passing a variable
 // dynamic access / dynamic dispatch
 for (let key in person) {
-    console.log(person[key]);
+    // console.log(person[key]);
 }
+
+// object destructuring
+const { firstName, lastName, health, email, job, ...rest } = person;
+console.log(firstName, lastName, health, email, job);
+rest.fullName = "Ahmed";
+console.log(rest);
+console.log(person);

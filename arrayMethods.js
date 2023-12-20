@@ -1,14 +1,29 @@
 // -----------  basic  ----------------
 const arr = [1, 2, 3];
 arr.push(4);
-console.log(arr);
+// console.log(arr);
 arr.pop();
-console.log(arr);
-arr.shift();
-console.log(arr);
-arr.unshift(1);
-console.log(arr);
-console.log(arr.includes(1), arr.indexOf(1), arr[0]);
+// console.log(arr);
+arr.shift(); // remove first element
+// console.log(arr);
+arr.unshift(1); // add first element
+// console.log(arr);
+// console.log(arr.includes(1), arr.indexOf(1), arr[0]);
+
+// ----------------- destructuring ----------
+
+let [num1, num2, num3] = arr;
+// console.log(num1, num2, num3);
+
+// swapping values like this is possible because of destructuring
+[num3, num2, num1] = [num1, num2, num3];
+// console.log(num1, num2, num3);
+
+// const [num1 ]
+
+// ---------------------- rest parameter
+const [num, ...rest] = arr;
+console.log(...rest);
 
 // ---------------------shallow copies ------------
 const arr2 = [4, 5, 6];
@@ -52,80 +67,3 @@ let removedFruits = fruits.slice(-2); //  a copy
 // let fruit = fruits.splice(2, 1); // delete
 // let fruit = fruits.splice(2, 1, "Lemon", "Kiwi"); // add & delete
 // console.log(fruit);
-
-// --------------------- for each -----------------
-// why you should not use foreach
-
-// console.log(vals);
-
-const initApp = async () => {
-    // useForEach(vals);
-    // getPostSerialized(vals);
-    // getPostsConcurrently(vals);
-    getPostSerializedWithReduce(vals);
-};
-
-// document.addEventListener("DOMContentLoaded", initApp);
-
-const getPost = async (id) => {
-    // const data = await fetch("https://jsonplaceholder.typicode.com/posts");
-    // const res = await data.json();
-    // console.log(res);
-    // short version
-    // console.log(
-    //     (await fetch("https://jsonplaceholder.typicode.com/posts")).json()
-    // );
-    return await (
-        await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-    ).json();
-};
-
-// (async () => {
-//     console.log(await getPost());
-// })();
-
-// console.log(getPost(1));
-
-// the recieved datas are not serialized
-// const useForEach = (ids) => {
-//     ids.forEach(async (id) => {
-//         const data = await getPost(id);
-//         console.log(data);
-//     });
-// };
-
-// serialized post
-const getPostSerialized1 = async (ids) => {
-    for (let i = 0; i < ids.length; i++) {
-        const data = await getPost(ids[i]);
-        console.log(data);
-    }
-    console.log(`waiting for the data`);
-};
-// simple syntax
-const getPostSerialized2 = async (ids) => {
-    for (const id of ids) {
-        const data = await getPost(id);
-        console.log(data);
-    }
-    console.log(`waiting for the data`);
-};
-
-// serialization is not guaranteed but it's faster
-const getPostsConcurrently = async (ids) => {
-    const posts = await Promise.allSettled(ids.map(async (id) => getPost(id)));
-    console.log(posts);
-    console.log(`I'll wait on you`);
-};
-
-// serialized data
-const getPostSerializedWithReduce = async (ids) => {
-    await ids.reduce(async (acc, id) => {
-        // waits for the previous item to complete
-        await acc;
-        // get the next item
-        const post = await getPost(id);
-        console.log(post);
-    }, Promise.resolve());
-    console.log("waiting for the data");
-};
