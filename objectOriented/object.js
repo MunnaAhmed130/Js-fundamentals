@@ -54,7 +54,7 @@ person["job"] = "medic";
 // console.log(Object.getOwnPropertyDescriptor(person, `firstName`));
 
 // check if object has this property
-// console.log(person.hasOwnProperty("heal"));
+console.log(person.hasOwnProperty("heal"));
 
 // console.log(person);
 
@@ -75,5 +75,6 @@ const { firstName, lastName, health, email, job, ...rest } = person;
 // console.log(rest);
 console.log(person[sym]);
 // console.log(person.fullName());
+
 // optional chaining
-console.log(person.lang.eng?.proficiency.lol);
+console.log(person.lang.eng?.proficiency);
