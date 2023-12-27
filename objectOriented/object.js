@@ -5,6 +5,7 @@
 
 // constructors make singleton
 // Obeject.create()
+const user2 = new Object();
 
 // object literals
 const user = {};
@@ -21,6 +22,11 @@ const person = {
     [sym]: "my key",
     health: 100,
     email: "johndoe@gmail.com",
+    lang: {
+        eng: {
+            proficiency: "70%",
+        },
+    },
     // object method
     fullName: function () {
         console.log(this.firstName + " " + this.lastName);
@@ -66,6 +72,8 @@ for (let key in person) {
 const { firstName, lastName, health, email, job, ...rest } = person;
 // console.log(firstName, lastName, health, email, job);
 // rest.fullName = "Ahmed";
-console.log(rest);
+// console.log(rest);
 console.log(person[sym]);
 // console.log(person.fullName());
+// optional chaining
+console.log(person.lang.eng?.proficiency.lol);
