@@ -3,11 +3,22 @@
 //     return this.firstName + " " + this.lastName;
 // };
 
+// constructors make singleton
+// Obeject.create()
+
+// object literals
+const user = {};
+
+const sym = Symbol("key");
+
 // encapsulation data/ organizing code
 // with object literals
 const person = {
+    // key: value // keys are always string
     firstName: "John",
     lastName: "doe",
+    // symbol as key
+    [sym]: "my key",
     health: 100,
     email: "johndoe@gmail.com",
     // object method
@@ -30,6 +41,7 @@ const person = {
 
 // dot/bracket notation to add property
 person.job = "archer";
+// person[job] = "archer";  // error
 person["job"] = "medic";
 
 // get object's property descriptor
@@ -38,7 +50,7 @@ person["job"] = "medic";
 // check if object has this property
 // console.log(person.hasOwnProperty("heal"));
 
-console.log(person);
+// console.log(person);
 
 // dot/bracket notation to access property
 console.log(person["email"], person.health);
@@ -52,7 +64,8 @@ for (let key in person) {
 
 // object destructuring
 const { firstName, lastName, health, email, job, ...rest } = person;
-console.log(firstName, lastName, health, email, job);
-rest.fullName = "Ahmed";
+// console.log(firstName, lastName, health, email, job);
+// rest.fullName = "Ahmed";
 console.log(rest);
-console.log(person);
+console.log(person[sym]);
+// console.log(person.fullName());
