@@ -1,16 +1,18 @@
-// short circuit evaluation
+// short circuit evaluation (cs)
 
-// or
-console.log(true || true);
-console.log(true || false);
+// or is evaluated until we get one true
+// if the first value is true then a short circuit occurs
+console.log(true || true); // cs
+console.log(true || false); // cs
 console.log(false || true);
 console.log(false || false);
 
-// and
+// and is evaluated until we get one false
+// if the first value is false then a short circuit occurs
 console.log(true && true);
 console.log(true && false);
-console.log(false && true);
-console.log(false && false);
+console.log(false && true); // cs
+console.log(false && false); // cs
 
 // default value
 let name;
