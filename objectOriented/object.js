@@ -45,6 +45,10 @@ const person = {
 // prevent adding properties to object
 // Object.preventExtensions(person);
 
+let key = "date of birth";
+// person.key = 1999; // does not work with variables
+person[key] = 1999;
+
 // dot/bracket notation to add property
 person.job = "archer";
 // person[job] = "archer";  // error
@@ -69,11 +73,24 @@ for (let key in person) {
 }
 
 // object destructuring
-const { firstName, lastName, health, email, job, ...rest } = person;
+const {
+    firstName,
+    lastName,
+    health,
+    email,
+    job,
+    lang: {
+        eng: { proficiency },
+        ban = {}, // default value while destructuring
+    },
+    ...rest
+} = person;
 // console.log(firstName, lastName, health, email, job);
+console.log(proficiency, ban);
 // rest.fullName = "Ahmed";
 // console.log(rest);
 console.log(person[sym]);
+// console.log(person);
 // console.log(person.fullName());
 
 // optional chaining

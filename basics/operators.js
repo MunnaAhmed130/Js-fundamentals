@@ -26,4 +26,14 @@ while (j <= 10) {
     ++j;
 }
 
+// nullish coalescing
+// nullish = null / undefined
+
+let value = null;
+console.log(value ?? "not null");
+console.log("value" ?? value);
+console.log("null" ?? "value");
+
+console.log(true && "value");
+console.log("value" && true);
 // https://stackoverflow.com/questions/36704648/why-have-for-loops-with-pre-increment-the-same-behaviour-as-those-with-post-incr

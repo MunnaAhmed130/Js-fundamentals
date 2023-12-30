@@ -24,3 +24,10 @@ console.log(result); // output 0
 console.log(addFive(result)); // output 5
 console.log(addFive(10)); // output 15
 console.log(result); // output 0
+
+// rest operator
+function add(...rest) {
+    console.log(rest);
+}
+
+add(5, 4);
