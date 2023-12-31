@@ -64,6 +64,6 @@ let removedFruits = fruits.slice(-2); //  a copy
 
 // splice mutates the array
 // let fruit = fruits.splice(2, 0, "Lemon", "Kiwi"); // add
-// let fruit = fruits.splice(2, 1); // delete
+let fruit = fruits.splice(2, 1); // remove an element
 // let fruit = fruits.splice(2, 1, "Lemon", "Kiwi"); // add & delete
-// console.log(fruit);
+console.log(fruit, fruits);
