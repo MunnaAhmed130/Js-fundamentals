@@ -74,7 +74,7 @@ for (let key in person) {
 
 // object destructuring
 const {
-    firstName,
+    firstName: name, // destructure firstname as name
     lastName,
     health,
     email,
@@ -86,7 +86,7 @@ const {
     ...rest
 } = person;
 // console.log(firstName, lastName, health, email, job);
-console.log(proficiency, ban);
+console.log(proficiency, ban, name);
 // rest.fullName = "Ahmed";
 // console.log(rest);
 console.log(person[sym]);
