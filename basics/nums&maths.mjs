@@ -17,7 +17,13 @@ const value = "1.2$";
 
 console.log(Number(value), parseFloat(value), parseInt(value));
 
+let x = NaN;
+console.log(x === x);
+console.log(isNaN(x), isNaN("hello"));
+console.log(Number.isNaN("hello"), Number.isNaN("hello"));
+
 // ============ Maths =================
+console.log("math");
 // console.log(Math);
 
 // console.log(Math.abs(-4)); // return positive number
