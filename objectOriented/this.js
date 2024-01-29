@@ -1,23 +1,30 @@
 // in Browser
 "use strict";
 
-// const value = 10;
+const value = 10;
+// num = 1;
 
-// this.value = 10; // global variable with this
-console.log("global", this); // window object
-// console.log(value);
+// this.value = 10; // set global variable with this
 
-// in strict mode this in a function definition is undefined
+// in node returns empty objects, brower returns window object
+console.log("global", this);
+
+console.log(this.value); // undefined
+// console.log(this.num); // 1
+
 function context() {
+    // in node returns global objects, brower returns window object
     // "use strict";
-    console.log(this); // undefined
+    // in strict mode node & browser returns undefined
+    console.log("function context", this); // undefined
 }
 
 context();
 
 // arrow function will always refer to global object
 const func = () => {
-    console.log(this); // window object
+    // in node returns empty objects, brower returns window object
+    console.log("Arrow function context", this); //
 };
 
 func();
@@ -58,4 +65,4 @@ var obj = {
 // obj.log();
 // obj.arrow();
 obj.job.about()();
-obj.job.more();
+obj.job.more(); // in node return empty object, browser returns window object
