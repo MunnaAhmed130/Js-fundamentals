@@ -29,6 +29,7 @@ let symbol = Symbol(); // symbol
 // -----------------------------------
 
 // typeof returns a string of data indicating the data type
+// works great with all other primitive data types other than `null`
 
 console.log("text -", typeof text);
 
