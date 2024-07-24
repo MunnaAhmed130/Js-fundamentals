@@ -1,45 +1,55 @@
-// "use strict";
-// var getFullName = function () {
-//     return this.firstName + " " + this.lastName;
-// };
+/*
+  An object is an unordered list of properties consisting of
+  a name/key (always a string) and a value.
+  When the value of a property is a function, it is called a method.
+
+*/
 
 // constructors make singleton
 // Obeject.create()
-const user2 = new Object();
+
+// create object using `new` operator with a constructor
+const object = new Object(); // {}
+// console.log(object);
 
 // object literals
-const user = {};
+const user = { name: "Nicholas" };
+// console.log(user);
 
-const sym = Symbol("key");
+/*
+ JS is a garbage collected language so we don't have worry about memory allocation
+ but dereference objects so garbage collector can free up memory 
+*/
 
-// encapsulation data/ organizing code
-// with object literals
+// dereferencing data
+user.name = null;
+// console.log(user);
+
+// adding properties
+const sym = Symbol("key"); //  symbols as key
+user[sym] = "key";
+// console.log(sym);
+
+// accessing property
+console.log(user.name);
+console.log(user[sym]);
+
+// Deleting or removing properties
+delete user.name;
+console.log(user);
+
+// encapsulation
 const person = {
-    // key: value // keys are always string
-    firstName: "John",
-    lastName: "doe",
-    // symbol as key
-    [sym]: "my key",
-    health: 100,
-    email: "johndoe@gmail.com",
-    lang: {
-        eng: {
-            proficiency: "70%",
-        },
+  firstName: "John",
+  lastName: "doe",
+  // symbol as key
+  [sym]: "my key",
+  email: "johndoe@gmail.com",
+  lang: {
+    eng: {
+      proficiency: "70%",
     },
-    // object method
-    fullName: function () {
-        console.log(this.firstName + " " + this.lastName);
-    },
-    heal: function (num1, num2) {
-        this.health += num1 + num2;
-        console.log(this);
-    },
-    // ES6
-    login() {
-        // console.log(this.email);
-        return this.email;
-    },
+  },
 };
 
 // prevent adding properties to object
@@ -58,40 +68,38 @@ person["job"] = "medic";
 // console.log(Object.getOwnPropertyDescriptor(person, `firstName`));
 
 // check if object has this property
-console.log(person.hasOwnProperty("heal"));
+// console.log(person.hasOwnProperty("heal"));
 
 // console.log(person);
 
 // dot/bracket notation to access property
-console.log(person["email"], person.health);
+// console.log(person["email"], person.health);
 
 // why use bracket notation
 // for dynamic access / passing a variable
 // dynamic access / dynamic dispatch
 for (let key in person) {
-    // console.log(person[key]);
+  // console.log(person[key]);
 }
 
 // object destructuring
 const {
-    firstName: name, // destructure firstname as name
-    lastName,
-    health,
-    email,
-    job,
-    lang: {
-        eng: { proficiency },
-        ban = {}, // default value while destructuring
-    },
-    ...rest
+  firstName: name, // destructure firstname as name
+  lastName,
+  lang: {
+    eng: { proficiency },
+    ban = {}, // default value while destructuring
+  },
+  ...rest
 } = person;
+
+// console.log(proficiency, ban, name);
 // console.log(firstName, lastName, health, email, job);
-console.log(proficiency, ban, name);
 // rest.fullName = "Ahmed";
 // console.log(rest);
-console.log(person[sym]);
+// console.log(person[sym]);
 // console.log(person);
 // console.log(person.fullName());
 
 // optional chaining
-console.log(person.lang.eng?.proficiency);
+// console.log(person.lang.eng?.proficiency);
