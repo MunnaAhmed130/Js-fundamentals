@@ -49,6 +49,8 @@ console.log("big Integer -", typeof bigInt);
 console.log("symbol -", typeof Symbol(), typeof symbol);
 
 console.log("null -", typeof null, "why?"); // null is tricky
+// null being a object has been acknowledged as an error by TC39
+// TC39 is the committee that designs and maintains JS
 
 // to check for null we can directly compare with null itself
 console.log(empty === null);
