@@ -104,6 +104,10 @@ console.log("colors instanceof Function", colors instanceof Function); // false
 
 // so each reference type is correctly identified as their own data type and Object
 
+console.log(Array.isArray(colors));
+// this is more robust way to check for array. Why?
+// find out yourselft look through notes or search it up.
+
 // --------------------------------------------------------------------------
 
 let collection = {
