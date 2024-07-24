@@ -1,4 +1,6 @@
+//
 // variables holding primitive data types directly contain the primitive value
+//
 // below are the examples of primtive literals
 
 // string delimited with single or double qoutes
@@ -25,6 +27,8 @@ let symbol = Symbol(); // symbol
 // -----------------------------------
 // Identifying primitives with typeof
 // -----------------------------------
+
+// typeof returns a string of data indicating the data type
 
 console.log("text -", typeof text);
 
