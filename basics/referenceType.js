@@ -19,9 +19,9 @@ let doAnotherthing = function () {}; // function
 let list1 = []; // arrays are spacial built-in object
 let object1 = {}; // object
 
-console.log(object, object1);
-console.log(list, list1);
-console.log(doSomething, doAnotherthing);
+// console.log(object, object1);
+// console.log(list, list1);
+// console.log(doSomething, doAnotherthing);
 
 // object
 
@@ -37,15 +37,19 @@ const book1 = new Object();
 book1.name = "The Principles of Object-Oriented JavaScript";
 book1.year = 2014;
 
-console.log(book);
-console.log(book1);
+// result is the same
+
+// console.log(book);
+// console.log(book1);
 
 // array
 const colors = ["red", "blue", "green"];
 const colors1 = new Array("red", "blue", "green");
 
-console.log(colors);
-console.log(colors1);
+// result is the same
+
+// console.log(colors);
+// console.log(colors1);
 
 // functions
 
@@ -62,8 +66,43 @@ function reflect(value) {
 // is the same as
 let reflect2 = new Function("value", "return value;");
 
-console.log(reflect("hello"));
-console.log(reflect2("hello"));
+// result is the same
+
+// console.log(reflect("hello"));
+// console.log(reflect2("hello"));
+
+/*-------------------------------------
+  Identifying reference types         
+  --------------------------------------       */
+
+console.log("typeof book is", typeof book); // object
+console.log("typeof colors is", typeof colors); // object
+console.log("typeof reflect is", typeof reflect); // function
+
+// identifying function was easier other returns "object"
+// To identify reference types more easily use instanceof operator.
+// instanceof takes an object and constructor as parameter
+// and returns true or false
+console.log("reflect is a function ", reflect instanceof Function); // true
+console.log("book is an object", book instanceof Object); // true
+console.log("colors is an array", colors instanceof Array); // true
+
+// the instanceof operator can identify inherited types
+// all reference types are objects that means they are also instance of Object
+
+console.log("reflect instanceof Function", reflect instanceof Function); // true
+console.log("reflect instanceof Object", reflect instanceof Object); // true
+console.log("reflect instanceof Array", reflect instanceof Array); // false
+
+console.log("book instanceof Object", book instanceof Object); // true
+console.log("book instanceof Array", book instanceof Array); // false
+console.log("book instanceof Function", book instanceof Function); // false
+
+console.log("colors instanceof Object", colors instanceof Object); // true
+console.log("colors instanceof Array", colors instanceof Array); // true
+console.log("colors instanceof Function", colors instanceof Function); // false
+
+// so each reference type is correctly identified as their own data type and Object
 
 // --------------------------------------------------------------------------
 
