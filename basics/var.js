@@ -1,6 +1,6 @@
 // var with strict mode
 
-"use strict"; // es5, its a literal expression for strict mode
+// "use strict"; // es5, its a literal expression for strict mode
 
 // var is global scoped and function scoped, hoisted
 
@@ -14,7 +14,9 @@ var number = "12345";
 var number = "1234"; // redeclear variable
 number = "123"; // re-assign value
 
-const number = "1234"; // redeclear variable
+// redeclear variable  let and const
+// const number = "1234"; // syntaxError
+// let number = "1234"; // syntaxError
 
 function myFunction() {
   // because var is function scoped
@@ -49,13 +51,3 @@ console.log(
   "the globally accessible redeclared value of greet in block scope",
   greet
 ); // "Hi again"
-
-// ------------------------- undeclared variable ---------------------------------
-
-// you can also declare variable without any keyword and it will be a global variable
-// it's more like a implicit/automatic declaration
-// name = "hey"; // this should be avoided and can be avoided by using strict mode
-// console.log(name);
-
-// automatically declared/undeclared variables has to be initialized or it'll throw an error.
-// color; // color is not defined
