@@ -77,12 +77,15 @@ let reflect2 = new Function("value", "return value;");
 
 console.log("typeof book is", typeof book); // object
 console.log("typeof colors is", typeof colors); // object
+// identifying function is easier others
 console.log("typeof reflect is", typeof reflect); // function
 
-// identifying function was easier other returns "object"
-// To identify reference types more easily use instanceof operator.
-// instanceof takes an object and constructor as parameter
-// and returns true or false
+/*
+  To identify reference types more easily use instanceof operator.
+  instanceof takes an object and constructor as parameter
+  and returns true or false
+*/
+
 console.log("reflect is a function ", reflect instanceof Function); // true
 console.log("book is an object", book instanceof Object); // true
 console.log("colors is an array", colors instanceof Array); // true
