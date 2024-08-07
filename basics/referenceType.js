@@ -77,7 +77,7 @@ let reflect2 = new Function("value", "return value;");
 
 console.log("typeof book is", typeof book); // object
 console.log("typeof colors is", typeof colors); // object
-// identifying function is easier others
+// identifying function is easier than others because of the internal [[Call]] property
 console.log("typeof reflect is", typeof reflect); // function
 
 /*
