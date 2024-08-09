@@ -1,6 +1,6 @@
 //----------------------------------
 // () parentheses
-// [] bracket
+// [] bracket/ square bracket
 // {} braces / curly braces
 // ----------------------------------
 
