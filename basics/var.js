@@ -7,7 +7,7 @@
 // var is global scoped when declared outside of a function otherwise function scoped
 // var hoists the declaration to the top of the scope and initializes with undefined
 
-console.log("var before declaration", number); // undefined
+console.log("var before declaration and initialization", number); // undefined
 var number = "12345";
 
 // both will overwrite value
