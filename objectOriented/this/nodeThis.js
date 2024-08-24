@@ -58,6 +58,19 @@ const func = () => {
 
 func();
 
+function anotherFunc() {
+  console.log(this);
+  const parentThis = this;
+  return () => {
+    // this arrow func gets this from its parent function
+    const childThis = this;
+    console.log(this);
+    console.log(parentThis === childThis);
+  };
+}
+
+anotherFunc()();
+
 // --------------------------------- this in object
 
 // in object method this refers to the object

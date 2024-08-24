@@ -1,5 +1,5 @@
 // in Browser
-"use strict";
+// "use strict";
 
 // const value = 10;
 // num = 1;
@@ -57,6 +57,19 @@ const func = () => {
 };
 
 func();
+
+function anotherFunc() {
+  console.log("Parnt function", this);
+  const parentThis = this;
+  return () => {
+    // this arrow func gets this from its parent function
+    const childThis = this;
+    console.log("lexically found", this);
+    console.log(parentThis === childThis);
+  };
+}
+
+anotherFunc()();
 
 // --------------------------------- this in object
 
@@ -122,6 +135,8 @@ let person2 = {
   sayName: sayNameForAll,
 };
 
+// When a function is called as a property of an object
+// the value of this changes to the object it was called
 person1.sayName(); // outputs "Nicholas"
 person2.sayName(); // outputs "Greg"
 
