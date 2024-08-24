@@ -28,6 +28,7 @@ function context() {
   // in strict mode node & browser returns undefined
   console.log("function context", this); // undefined
   console.log(this === global);
+  return this;
 }
 
 console.log(context());
@@ -54,6 +55,7 @@ const func = () => {
   // node returns  module.export object
   console.log("Arrow function context", this); //
   console.log(this === module.exports);
+  return this;
 };
 
 func();
@@ -70,6 +72,13 @@ function anotherFunc() {
 }
 
 anotherFunc()();
+
+function testFunc() {
+  console.log(this);
+  return func;
+}
+
+console.log(testFunc()());
 
 // --------------------------------- this in object
 
