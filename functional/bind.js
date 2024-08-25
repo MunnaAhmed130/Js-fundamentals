@@ -1,45 +1,39 @@
 function fullName() {
-    console.log("fullName", this.firstName + " " + this.lastName);
+  return this.firstName + " " + this.lastName;
 }
 
 function heal(num1, num2) {
-    this.health += num1 + num2;
-    console.log("Health", this);
+  this.health += num1 + num2;
+  return this;
 }
 
 const person = {
-    firstName: "John",
-    lastName: "doe",
-    health: 100,
-    // object method
-    fullName: function () {
-        console.log(this.firstName + " " + this.lastName);
-    },
-    heal: function (num1, num2) {
-        this.health += num1 + num2;
-        console.log(this);
-    },
+  firstName: "Mary",
+  lastName: "doe",
+  health: 50,
 };
 
 const person1 = {
-    firstName: "Mary",
-    lastName: "doe",
-    health: 50,
+  firstName: "John",
+  lastName: "doe",
+  health: 58,
 };
 
-console.log("function prototype - call");
+// bind creates and returns a new function
+// with 'this' bound to specific object
+// which can be ivoked later
 
 // bind
-// const healPerson1 = person.heal.bind(person1, 10, 20); // bind returns a function
-const healPerson1 = person.heal.bind(person1); // bind returns a function
-healPerson1(10, 20);
-healPerson1(10, 20);
-healPerson1(10, 20);
-
-console.log("function call");
+const healPerson = heal.bind(person); // bind returns a function
+console.log(healPerson(10, 20));
+console.log(healPerson(10, 20));
+console.log(healPerson(10, 20));
 
 // bind
-const printFullName = fullName.bind(person1); // bind returns function
+const printFullName = fullName.bind(person); // bind returns function
 printFullName();
-const maryHeal = heal.bind(person1, 10, 20); // bind returns function
-maryHeal();
+
+const healPerson1 = heal.bind(person1, 10, 20); // bind returns function
+console.log(healPerson1());
+console.log(healPerson1());
+console.log(healPerson1());
