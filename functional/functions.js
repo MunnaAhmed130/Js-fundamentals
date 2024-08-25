@@ -13,14 +13,13 @@
 // there are 3 literal forms of functions - declarations, expressions and arrow function
 
 // -------------- function declaration
-// function statement / declaration / definition / named
-// has function name
+// function statement / declaration / definition / named - has a name
 // doesn't have semicolon at the end of the function
 // only function declarations are hoisted to the top of the context
 
 // declarations are hoisted so this works
 console.log("typeof greet -", typeof greet); // function
-console.log(greet());
+// console.log(greet());
 
 // default parameter
 function greet(name = "user") {
@@ -29,7 +28,7 @@ function greet(name = "user") {
 }
 
 // function call with arguments
-console.log(greet("John", "de", "bourgh", 10)); // {}
+// console.log(greet("John", "de", "bourgh", 10)); // {}
 console.log("prototype", greet.prototype);
 
 // -------------------- function expression
@@ -42,37 +41,20 @@ console.log("prototype", greet.prototype);
 // they are not hoisted to the top of the context
 
 // console.log(typeof greeting); // referenceError for let or const, undefined for var
+// console.log(greeting()); // typerror for var ,referenceError for let or const
 
 // try changing the variable keyword with let or const
-let greeting = function (name = "user") {
+// at this point, greeting is in Temporal Dead Zone
+const greeting = function (name = "user") {
   console.log("arguments object", arguments);
   return `Hello ${name}!`;
 };
 
+// at this point, greeting contains a functions
 console.log("typeof greeting", typeof greeting);
-console.log(greeting("hello", "world"));
-console.log(greeting());
+// console.log(greeting("hello", "world"));
+// console.log(greeting());
 console.log("prototype", greeting.prototype);
-
-// ------------------- arrow function
-// arrow functions don't have arguments property
-const greet2 = (user = "user") => {
-  // console.log(arguments); // uncaught referenceError: arguments is not defined
-  return `Hello ${user}`;
-};
-
-greet2("Hello", "World");
-console.log(greet2.prototype); // arrow function don't have any prototype
-
-var result = 0;
-function addFive(num) {
-  return (result = num + 5);
-}
-
-console.log(result); // output 0
-console.log(addFive(result)); // output 5
-console.log(addFive(10)); // output 15
-console.log(result); // output 0
 
 // rest operator
 function add(...rest) {
@@ -80,3 +62,5 @@ function add(...rest) {
 }
 
 add(5, 4);
+
+// comment all function call

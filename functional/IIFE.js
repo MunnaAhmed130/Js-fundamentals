@@ -6,26 +6,28 @@
 // Variations:
 // with anonymous arro function inside
 (() => {
-    // do stuff
+  // do stuff
+  console.log("IIFE arrow function");
 })();
 
 // with function keyword
 
 (function () {
-    // do stuff
+  // do stuff
+  console.log("IIFE");
 })();
 
 //  variables declared inside IIFE are private to that IIFE.
 
 // with a function name(allows for recursion)
 (function myIIFE(num) {
-    num++;
-    console.log(num);
-    // return num !== 5 ? myIIFE(num) : console.log("finished!");
+  num++;
+  console.log(num);
+  // return num !== 5 ? myIIFE(num) : console.log("finished!");
 })((num = 0));
 
 let result = (function () {
-    return "From IIFE!";
+  return "From IIFE!";
 })();
 
 // Reason
@@ -37,22 +39,22 @@ const helloWorld = () => "Hello World!";
 
 // isolate declarations within the function
 (() => {
-    const x = "iife says";
-    const helloWorld = () => "Hello IIFE";
-    // console.log(x, helloWorld());
+  const x = "iife says";
+  const helloWorld = () => "Hello IIFE";
+  // console.log(x, helloWorld());
 })();
 
 // console.log(x, helloWorld());
 
 // 2. Private variables and methods from closure
 const increment = (() => {
-    let counter = 0;
-    console.log(counter);
-    const credits = (num) => console.log(`You have ${num} credit.`);
-    return () => {
-        ++counter;
-        credits(counter);
-    };
+  let counter = 0;
+  console.log(counter);
+  const credits = (num) => console.log(`You have ${num} credit.`);
+  return () => {
+    ++counter;
+    credits(counter);
+  };
 })();
 
 // increment();
@@ -63,14 +65,14 @@ const increment = (() => {
 // 3. The Module Pattern
 
 const Score = (() => {
-    let count = 0;
-    return {
-        current: () => count,
-        increment: () => ++count,
-        reset: () => {
-            count = 0;
-        },
-    };
+  let count = 0;
+  return {
+    current: () => count,
+    increment: () => ++count,
+    reset: () => {
+      count = 0;
+    },
+  };
 })();
 
 Score.increment();
@@ -81,21 +83,21 @@ Score.reset();
 
 // The Revealing Pattern is a variation of the Module pattern
 const Game = (() => {
-    let count = 0;
-    const current = () => {
-        return `Game score is ${count}.`;
-    };
-    const increment = () => {
-        ++count;
-    };
-    const reset = () => {
-        count = 0;
-    };
-    return {
-        current: current,
-        increment: increment,
-        reset: reset,
-    };
+  let count = 0;
+  const current = () => {
+    return `Game score is ${count}.`;
+  };
+  const increment = () => {
+    ++count;
+  };
+  const reset = () => {
+    count = 0;
+  };
+  return {
+    current: current,
+    increment: increment,
+    reset: reset,
+  };
 })();
 
 Game.increment();
