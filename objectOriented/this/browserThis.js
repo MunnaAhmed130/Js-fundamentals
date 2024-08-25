@@ -1,8 +1,8 @@
 // in Browser
-// "use strict";
+"use strict";
 
 // const value = 10;
-// num = 1;
+var num = 1;
 // console.log(this.num); // 1
 
 // set global variable with this  / add property
@@ -15,6 +15,8 @@ this.value = 1; // modify property
 console.log(this.value); // access property
 
 delete this.value; // removing property
+
+// this = ""; // syntaxError - cannot mutate the value of this
 
 // refers to window object in browser
 let ob = { name: "", log: this };
@@ -32,6 +34,10 @@ function context() {
 
 console.log(context());
 
+// Functions(declaration) and variables(declared with var) in the `GEC` get attached to GEC
+// as methods and properties to the `window` object.
+console.log(window.context());
+console.log(window.num);
 // ------------------------ function expresstion and this
 
 const funcExp = function () {
@@ -58,11 +64,13 @@ const func = () => {
 
 func();
 
+// outer function both returns undefined
 function anotherFunc() {
-  console.log("Parnt function", this);
+  console.log("Parent function", this);
   const parentThis = this;
   return () => {
     // this arrow func gets this from its parent function
+    // so this also returns undefined
     const childThis = this;
     console.log("lexically found", this);
     console.log(parentThis === childThis);
@@ -70,6 +78,12 @@ function anotherFunc() {
 }
 
 anotherFunc()();
+
+// here windowFunc has access to window as 'this'
+// outer function gets window
+let windowFunc = window.anotherFunc();
+// inner function also gets window
+windowFunc();
 
 // --------------------------------- this in object
 
@@ -135,10 +149,14 @@ let person2 = {
   sayName: sayNameForAll,
 };
 
+var name = "Michael";
+
 // When a function is called as a property of an object
 // the value of this changes to the object it was called
 person1.sayName(); // outputs "Nicholas"
 person2.sayName(); // outputs "Greg"
+
+window.sayNameForAll(); // outputs "Michael" // has access to global object
 
 // ----------------------  non-strict mode code
 
