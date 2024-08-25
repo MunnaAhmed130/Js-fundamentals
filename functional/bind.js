@@ -30,10 +30,15 @@ console.log(healPerson(10, 20));
 console.log(healPerson(10, 20));
 
 // bind
-const printFullName = fullName.bind(person); // bind returns function
-printFullName();
+const personName = fullName.bind(person); // bind returns function
+console.log(personName());
+
+// attaching a binded function to an object doesn't change the bounded 'this'
+person1.sayName = personName;
+console.log(person1.sayName());
 
 const healPerson1 = heal.bind(person1, 10, 20); // bind returns function
+
 console.log(healPerson1());
 console.log(healPerson1());
 console.log(healPerson1());
