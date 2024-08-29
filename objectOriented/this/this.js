@@ -50,7 +50,7 @@ let person = {
   },
 };
 
-console.log(person.return());
+// console.log(person.return());
 // console.log(person.sayHealth());
 
 const person1 = {
@@ -101,7 +101,8 @@ function greet() {
     return parentThis === childThis;
   };
 }
-console.log(greet()());
+
+// console.log(greet()());
 
 // ---------------------------------------------------------------
 
@@ -118,8 +119,8 @@ const obj2 = {
   name: "obj2",
 };
 
-console.log(obj1.name, obj1.__proto__);
-console.log(obj2.name, obj2.__proto__);
+// console.log(obj1.name, obj1.__proto__);
+// console.log(obj2.name, obj2.__proto__);
 
 // -------------------------------------------------------------------
 
@@ -128,54 +129,71 @@ function logThis() {
   console.log(this);
 }
 
-[1, 2, 3].forEach(logThis); // undefined, undefined, undefined
+// [1, 2, 3].forEach(logThis); // undefined, undefined, undefined
 
 // -------------------------------------------------------------------
 
 // this for accuracy
 let car = {
   make: "Lamborghini",
-  made: "Huracan",
+  model: "Huracan",
   fullName: function () {
-    // console.log(`${car.make} ${car.made}`);
+    // console.log(`${car.make} ${car.model}`);
     // the result as above but we don't have to know the object name
-    // console.log(`${this.make} ${this.made}`);
-    return `${car.make} ${car.made} - ${this.make} ${this.made}`;
+    // console.log(`${this.make} ${this.model}`);
+    console.log(
+      `${car.make} ${car.model} - ${this.make} ${this.model}, ${this}`,
+      this
+    );
+    return `${car.make} ${car.model} - ${this.make} ${this.model}`;
+  },
+  arrow: () => console.log(`arrow, ${this.make} ${this.model}`, this),
+};
+
+var truck = {
+  make: "Tesla",
+  model: "Truck",
+  fullName: function (callback) {
+    console.log(this.make + " " + this.model, this);
+    callback();
   },
 };
 
+truck.fullName(car.fullName);
+truck.fullName(car.arrow);
+
 let anotherCar = {
   make: "Lamborghini",
-  made: "Gallardo",
+  model: "Gallardo",
 };
 
 anotherCar.fullName = car.fullName;
 
-console.log(car.fullName());
-console.log(anotherCar.fullName());
+// console.log(car.fullName());
+// console.log(anotherCar.fullName());
 
-console.log(car.fullName.call(anotherCar));
+// console.log(car.fullName.call(anotherCar));
 
 // ----------------------------------------------------------------------
 
 var cars = [
-  { make: "Mclaren", made: "720s" },
-  { make: "Ferrari", made: "Italia" },
+  { make: "Mclaren", model: "720s" },
+  { make: "Ferrari", model: "Italia" },
 ];
 
 var vehicle = {
   cars: [
     {
       make: "Lamborghini",
-      made: "Huracan",
+      model: "Huracan",
     },
   ],
 
   fullName: function () {
-    let { make, made } = this.cars[0];
-    // console.log(make, made);
-    // return `${this.cars[0].make} ${this.cars[0].made} `;
-    return `${make} ${made}`;
+    let { make, model } = this.cars[0];
+    // console.log(make, model);
+    // return `${this.cars[0].make} ${this.cars[0].model} `;
+    return `${make} ${model}`;
   },
 };
 
